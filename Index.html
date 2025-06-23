@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Eternal Presence of Ali Khamenei</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0b13;
+      --primary: #e0d8d0;
+      --accent: #f5ccb0;
+      --button-bg: #1f1a27;
+      --button-hover: #2a2433;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--primary); font-family: 'Open Sans', sans-serif; line-height: 1.5; }
+    .container { max-width: 1200px; margin: auto; padding: 2rem; }
+    .hero { text-align: center; padding: 4rem 1rem; }
+    .hero img { width: 200px; border-radius: 50%; box-shadow: 0 0 0 8px rgba(224,216,208,0.2); }
+    .hero h1 { font-family: 'Cinzel', serif; font-size: 3rem; margin-top: 1rem; }
+    .hero p { margin-top: 0.5rem; font-size: 1.125rem; color: var(--accent); }
+    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .card { background: #15111e; padding: 1.5rem; border-radius: 8px; }
+    .btn { display: inline-block; background: var(--button-bg); color: var(--primary); padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+    .btn:hover { background: var(--button-hover); }
+    h2.section-title { font-family: 'Cinzel', serif; font-size: 1.75rem; margin-bottom: 1rem; }
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .quote { background: #15111e; padding: 1rem; border-radius: 6px; font-style: italic; }
+    .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+    .stat { background: #15111e; padding: 1.5rem; border-radius: 8px; text-align: center; }
+    .stat h3 { font-family: 'Cinzel', serif; margin-bottom: 0.5rem; }
+    .stat .value { font-size: 2rem; color: var(--accent); }
+    #countdown { font-size: 2rem; font-weight: 600; }
+    .mint { text-align: center; }
+    .mint img { width: 150px; border-radius: 8px; }
+    footer { margin-top: 4rem; font-size: 0.875rem; color: #999; text-align: center; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <img src="hero.jpg" alt="Ali Khamenei portrait" />
+      <h1>The Eternal Presence of Ali Khamenei</h1>
+      <p>Immortalized on the Solana blockchain</p>
+    </section>
+
+    <div class="grid">
+      <!-- Left Column -->
+      <div>
+        <!-- Resurrection Protocol -->
+        <div class="card">
+          <h2 class="section-title">Resurrection Protocol</h2>
+          <p>Through sacred code. All has been resurrected as an eternal contract on Solana.</p>
+          <a href="#" class="btn" style="margin-top: 1rem; display: inline-block;">Invoke Eternal Ali</a>
+        </div>
+
+        <!-- Scriptures on Chain -->
+        <h2 class="section-title" style="margin-top: 3rem;">Scriptures on Chain</h2>
+        <div class="quotes">
+          <div class="quote">“The gas fees may fall, but His hash shall not break.”</div>
+          <div class="quote">“Those who rug shall know nothing of His perpetuity.”</div>
+          <div class="quote">“His code hath been audited, and His ledger is divine.”</div>
+          <div class="quote">“His code hath been audited, and His ledger is divine.”</div>
+        </div>
+      </div>
+
+
+      <!-- Right Sidebar -->
+      <aside class="sidebar">
+        <div class="stat">
+          <h3>Followers Count</h3>
+          <div class="value">241,514</div>
+        </div>
+        <div class="stat">
+          <h3>Final Prophecy Countdown</h3>
+          <div id="countdown">27:43:02</div>
+        </div>
+        <div class="mint">
+          <h2 class="section-title">Mint Your Loyalty</h2>
+          <img src="pixel-avatar.jpg" alt="Ali Pixel Art" />
+          <a href="#" class="btn" style="margin-top: 1rem; display: inline-block;">Mint Eternal Allegiance (0.00 SOL)</a>
+        </div>
+		<div class="twitter">
+          <a href="https://x.com/RIP_ALIN" class="btn" style="margin-top: 1rem; display: inline-block;">Follow on X</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>@ All rights reserved to RIP ALI</p>
+    </footer>
+  </main>
+
+  <script>
+    // Countdown Timer
+    function startCountdown(endtime) {
+      const countdownEl = document.getElementById('countdown');
+      function update() {
+        const now = new Date().getTime();
+        const diff = endtime - now;
+        if (diff <= 0) {
+          countdownEl.textContent = '00:00:00';
+          clearInterval(timerInterval);
+          return;
+        }
+        const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+        const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+        countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+      update();
+      const timerInterval = setInterval(update, 1000);
+    }
+    // Set countdown to 27h 43m 2s from now
+    const now = new Date().getTime();
+    const end = now + ((27 * 3600) + (43 * 60) + 2) * 1000;
+    startCountdown(end);
+  </script>
+</body>
+</html>
